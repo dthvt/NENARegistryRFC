@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE rfc SYSTEM "rfc2629-xhtml.ent" >
+<!DOCTYPE rfc [
+<!ENTITY nbsp    "&#160;">
+<!ENTITY zwsp   "&#8203;">
+<!ENTITY nbhy   "&#8209;">
+<!ENTITY wj     "&#8288;">
+]>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
-<!-- used by XSLT processors -->
-<!-- For a complete list and description of processing instructions (PIs), 
-please see http://xml.resource.org/authoring/README.html. -->
 <rfc
-    xmlns:xi="http://www.w3.org/2001/XInclude" category="info" docName="draft-rosen-ecrit-emergency-registries-00" ipr="trust200902" obsoletes="" updates="" submissionType="IETF" xml:lang="en" tocInclude="true" tocDepth="5" symRefs="true" sortRefs="true" version="3">
+    xmlns:xi="http://www.w3.org/2001/XInclude" category="std" docName="draft-ietf-ecrit-emergency-registries-04" ipr="trust200902" obsoletes="" updates="" submissionType="IETF" xml:lang="en" tocInclude="true" tocDepth="5" symRefs="true" sortRefs="true" version="01" consensus="true">
   <!-- category values: std, bcp, info, exp, and historic
     ipr values: trust200902, noModificationTrust200902, noDerivativesTrust200902,
     or pre5378Trust200902
@@ -16,7 +18,7 @@ please see http://xml.resource.org/authoring/README.html. -->
     <!-- The abbreviated title is used in the page header - it is only necessary if the
         full title is longer than 39 characters -->
     <title abbrev="Emergency Registries">Emergency Registries</title>
-    <seriesInfo name="Internet-Draft" value="draft-rosen-ecrit-emergency-registries" />
+    <seriesInfo name="Internet-Draft" value="draft-ietf-ecrit-emergency-registries-04" />
     <!-- add 'role="editor"' below for the editors if appropriate -->
     <!-- Another author who claims to be an editor -->
     <author fullname="Brian Rosen" initials="B.R." surname="Rosen">
@@ -28,7 +30,7 @@ please see http://xml.resource.org/authoring/README.html. -->
           <city>Mars</city>
           <region>PA</region>
           <code />
-          <country>Us</country>
+          <country>US</country>
         </postal>
         <email>br@brianrosen.net</email>
         <!-- uri and facsimile elements may also be added -->
@@ -43,13 +45,13 @@ please see http://xml.resource.org/authoring/README.html. -->
           <city>Alexandria</city>
           <region>VA</region>
           <code />
-          <country>Us</country>
+          <country>US</country>
         </postal>
         <email>babley@nena.org</email>
         <!-- uri and facsimile elements may also be added -->
       </address>
     </author>
-    <date year="2023" />
+    <date year="2025" />
     <!-- If the month and year are both specified and are the current ones, xml2rfc will fill
         in the current day for you. If only the current year is specified, xml2rfc will fill
         in the current day and month for you. If the year is not the current one, it is
@@ -123,10 +125,23 @@ please see http://xml.resource.org/authoring/README.html. -->
         </section>
 
       </section>
+      <section anchor="PurposePrefix">
+          <name>Emergency Purpose Parameter Value</name>
+          <t>This document defines the 'Emergency' prefix for the 'purpose'
+   parameter of the Call-Info header field [RFC3261].  IANA is requested to add
+   this document to the list of references for the 'purpose' value of
+   Call-Info in the "Header Field Parameters and Parameter Values" sub-
+   registry of the "Session Initiation Protocol (SIP) Parameters"
+   registry.  Note that 'Emergency' is a compound value; when
+   used as a value of the 'purpose' parameter of a Call-Info header
+   field, 'Emergency' is immediately followed by a hyphen ('-') and a value from the Emergency Call-Info Purpose registry.
+        </t>
+      </section>
+
       <section>
-        <name>"Emergency" Area</name>
+        <name>"Emergency" Group</name>
         <t>
-          IANA is requested to establish the registries within this section under the "Emergency" area. These registries contain enumerated values used for various aspects of emergency calling and call handling.  New registries or subregistries in the "Emergency" area require a standards document, which MAY be a standards track RFC, but also MAY be a defined in a document from a recognized standards organization in which emergency services standards are in scope.  Where a new registry or subregistry is defined in an external standards organization, an expert SHALL review the document to ascertain that it is relevant to the "Emergency" area, that the organization defining the registry is a recognized standards organization in which emergency services standards are in scope, that the document clearly articulates the management method for the regisry, which MUST be substantially similar to one or more of the management methods in <xref target="RFC8216" />, and if expert review is specified, that experts acceptable to the IESG for the registry are available.  The expert(s) reviewing the new registry shall also request IANA to review the relevant documents using the same criteria as it would for a standards track RFC.  The expert SHALL NOT approve the new registry unless IANA is satisfied it can maintain the registry with the same or similar level of effort it expends for similar registries created by RFCs. If the management of the registry is specified as First Come First Served, which, per RFC8126 does not require an expert, an expert acceptable to the IESG must be available to answer questions about registrations and advise IANA of any issues in registrations in that registry.
+          IANA is requested to establish the registries within this section under the "Emergency" group. These registries contain enumerated values used for various aspects of emergency calling and call handling.  New registries or subregistries in the "Emergency" group require a standards document, which MAY be a standards track RFC, but also MAY be a defined in a document from a recognized standards organization in which emergency services standards are in scope.  Where a new registry or subregistry is defined in an external standards organization, an expert SHALL review the document to ascertain that it is relevant to the "Emergency" area, that the organization defining the registry is a recognized standards organization in which emergency services standards are in scope, that the document clearly articulates the management method for the registry, which MUST be substantially similar to one or more of the management methods in <xref target="RFC8216" />, and if expert review is specified, that experts acceptable to the IESG for the registry are available.  The expert(s) reviewing the new registry shall also request IANA to review the relevant documents using the same criteria as it would for a standards track RFC.  The expert SHALL NOT approve the new registry unless IANA is satisfied it can maintain the registry with the same or similar level of effort it expends for similar registries created by RFCs. If the management of the registry is specified as First Come First Served, which, per RFC8126 does not require an expert, an expert acceptable to the IESG must be available to answer questions about registrations and advise IANA of any issues in registrations in that registry.
         </t>
         <t>
           These registries are needed in order to implement <xref target="NENAi3">the NENA i3 Standard for Next-Generation 9-1-1</xref> as well as the <xref target="EIDO">NENA Standard for Emergency Incident Data Object</xref>. These standards, unless otherwise specified, will initially populate the registries created by this document. Some registries previously existed in <xref target="NRS" format="default">the NENA Registry System</xref>, but the intent of international SDOs is to maintain next-generation emergency calling registries under IANA in the future. <xref target="NRS" /> will be maintained only for backwards compatibility, and for registries required only for North America.
@@ -176,11 +191,11 @@ please see http://xml.resource.org/authoring/README.html. -->
         </section>
         <section>
           <name>Security and Privacy</name>
-          <t>The document defining a top level class MUST describe the security and privacy considerations of that class.  In general, there are no special security considerations for these identifiers.  Several top level classes are defined in this document.  In some circumstances, these identifiers may indicate what kind of agency is involved with a public safety incident, and some may identify a specific agency.  Encryption in transport of the communications that contain the identifier in classes defined in this document is REQUIRED and MUST be TLS or an equally secure protocol. Specifications implementing classes in this document MAY allow exceptions to this encryption requirement if justified. Where a document defines top level class(es), it MUST state if encryption in transport is required when conveying any indentifiers it defines.</t>
+          <t>The document defining a top level class MUST describe the security and privacy considerations of that class.  In general, there are no special security considerations for these identifiers.  Several top level classes are defined in this document.  In some circumstances, these identifiers may indicate what kind of agency is involved with a public safety incident, and some may identify a specific agency.  Transport encryption of the communications that contain the identifier in classes defined in this document is REQUIRED and MUST be TLS or an equally secure protocol. Specifications implementing classes in this document MAY allow exceptions to this encryption requirement if justified. Where a document defines top level class(es), it MUST state if transport encryption is required when conveying any identifiers it defines.</t>
         </section>
         <section>
           <name>Interoperability</name>
-          <t>Many of the identifiers in &lt;urn:emergency&gt; are similar in construction and use to identifiers originally defined in urn:nena. Backwards compatibility with those identifiers MUST be specified in the documents that use them. NENA STA-010.3-2021 is the document that defined and uses most of the identifiers in "&lt;urn:nena&gt;"; a future revision is expected to address backwards compatibility requirements between "&lt;urn:emergency&gt;" and "&lt;urn:nena&gt;". There are no other interoperability issues.</t>
+          <t>Many of the identifiers in "&lt;urn:emergency&gt;" are similar in construction and use to identifiers originally defined in "&lt;urn:nena&gt;". Backwards compatibility with those identifiers MUST be specified in the documents that use them. NENA STA-010.3-2021 is the document that defined and uses most of the identifiers in "&lt;urn:nena&gt;"; a future revision is expected to address backwards compatibility requirements between "&lt;urn:emergency&gt;" and "&lt;urn:nena&gt;". There are no other interoperability issues.</t>
         </section>
         <section>
           <name>Resolution</name>
@@ -193,7 +208,7 @@ please see http://xml.resource.org/authoring/README.html. -->
         <t>IANA is requested to move the Emergency Call Additional Data registry and its sub-registries to the Emergency Registry.</t>
       </section>
       <section anchor="urnEmergency">
-        <name>"urn:emergency" registry</name>
+        <name>"urn:emergency" Registry</name>
         <t>IANA is requested to create a registry for the emergency NID top level classes in the Emergency Registry.</t>
         <section>
           <name>Name</name>
@@ -223,14 +238,14 @@ please see http://xml.resource.org/authoring/README.html. -->
           <t>This registry contains:</t>
           <ul>
             <li>The ASCII "Name" of the "top level" class (a short string)</li>
-            <li>The ASCII "Purpose" of the label (explanatory text)</li>
+            <li>The UTF-8 "Purpose" of the label (explanatory text)</li>
             <li>A "Reference" (URI) to the standard that defines the label</li>
           </ul>
         </section>
         <section anchor="subreg">
           <name>Subregistries for top level classes of urn:emergency</name>
           <t>
-            In most cases, top level classes of urn:emergency will define subregistries.  Several levels of subregistries may be needed. The document that defines the class MUST define the subregistry if needed. IETF and emergency service standards organizations MAY define subregistries of &lt;&lt;urn:emergency&gt;&gt;. Instructions to IANA for the subregistry MUST conform to <xref target="RFC8126"/>.  The expert reviewer for the top level class works with IANA to assure that they do if the standards organization creating the subregistry is not the IETF.
+            In most cases, top level classes of urn:emergency will define subregistries.  Several levels of subregistries may be needed. The document that defines the class MUST define the subregistry if needed. IETF and emergency service standards organizations MAY define subregistries of "&lt;urn:emergency&gt;". Instructions to IANA for the subregistry MUST conform to <xref target="RFC8126"/>.  The expert reviewer for the top level class works with IANA to assure that they do if the standards organization creating the subregistry is not the IETF.
           </t>
           <section>
             <name>"urn:emergency:service" Subregistry</name>
@@ -238,7 +253,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>
               When calls are routed to or within an Emergency Services IP Network (ESInet), the routing element queries a LoST <xref target="RFC5222"/> server for the (nominal) route. It does so with a service URN. External routing is accomplished with "urn:service:sos", as defined by <xref target="RFC5031"/>. Within an ESInet, values under this registry are used.
             </t>
-            <t>Service URNs as defined here begin with “urn:emergency:service”. The sub-namespace defined by this registry MAY be further subdivided (potentially several times), by sub-registries under this sub-registry. The separator between urn:emergency:service and the entry in the subregistry is a colon (":"). A new entry starting with “urn:emergency:service” SHOULD denote a new type of route, which MUST be distinguished by the LoST server from other uses. For example, emergency calls being routed to or within the ESInet use “urn:emergency:service:sos” (or a subspace of it). Calls routed by a PSAP to a responder use “urn:emergency:service:responder” (the type of responder is also included, e.g.,  “urn:emergency:service:responder.police”). A client specifies the URN in a LoST query, and the LoST Server uses it to choose a (nominal) route.</t>
+            <t>Service URNs as defined here begin with "urn:emergency:service". The sub-namespace defined by this registry MAY be further subdivided (potentially several times), by sub-registries under this sub-registry. The separator between "urn:emergency:service" and the entry in the subregistry is a colon (":"). A new entry starting with "urn:emergency:service" SHOULD denote a new type of route, which MUST be distinguishable by the LoST server from other uses. For example, emergency calls being routed to or within an ESInet use "urn:emergency:service:sos" (or a subspace of it). Calls routed by a PSAP to a responder use "urn:emergency:service:responder" (the type of responder is also included, e.g.,  "urn:emergency:service:responder.police"). A client specifies the URN in a LoST query, and the LoST Server uses it to choose a (nominal) route.</t>
             <section>
               <name>Name</name>
               <t>urn:emergency:service</t>
@@ -267,7 +282,7 @@ please see http://xml.resource.org/authoring/README.html. -->
               <t>This registry contains:</t>
               <ul>
                 <li>The ASCII "Name" of the value (a short string)</li>
-                <li>The ASCII "Purpose" of the value (explanatory text)</li>
+                <li>The UTF-8 "Purpose" of the value (explanatory text)</li>
                 <li>A "Reference" (URI) to the document that defines the value</li>
               </ul>
             </section>
@@ -275,7 +290,7 @@ please see http://xml.resource.org/authoring/README.html. -->
           <section>
             <name>"urn:emergency:service:sos" Subregistry</name>
             <t>IANA is requested to creates a subregistry for "urn:emergency:service:sos" under "urn:emergency:service".</t>
-            <t>Routing of emergency calls within the ESInet is a primary function of systems that process such calls. When routing entities must route calls within the ESInet, they query the LoST Server for the route. Routing for emergency calls may involve multiple levels of routing entities. Each level may need a different URN to be distinguishable. Routing of emergency calls, including instant messages and non-interactive calls within an ESInet, is accomplished with a URN beginning with “urn:emergency:service:sos”.  The “urn:emergency:service:sos” registry contains values appropriate for the various levels of routing within the ESInet.  The separator between urn:emergency:service:sos and an entry in the subregistry is a colon (":").</t>
+            <t>Routing of emergency calls within an ESInet is a primary function of systems that process such calls. When routing entities must route calls within an ESInet, they query the LoST Server for the route. Routing for emergency calls may involve multiple levels of routing entities. Each level may need a different URN to be distinguishable. Routing of emergency calls, including instant messages and non-interactive calls within an ESInet, is accomplished with a URN beginning with "urn:emergency:service:sos".  The "urn:emergency:service:sos" registry contains values appropriate for the various levels of routing within an ESInet.  The separator between urn:emergency:service:sos and an entry in the subregistry is a colon (":").</t>
             <section>
               <name>Name</name>
               <t>urn:emergency:service:sos</t>
@@ -312,7 +327,7 @@ please see http://xml.resource.org/authoring/README.html. -->
           <section>
             <name>"urn:emergency:service:test" Registry</name>
             <t>IANA is requested to creates a subregistry for "urn:emergency:service:test" under "urn:emergency:service".</t>
-            <t>Test calls are directed to “urn:service:test.sos”. To route such test calls where the routing infrastructure uses multiple levels of routing, and thus uses URNs in the “urn:emergency:service:sos” registry, service URNs are needed for test calls with corresponding levels. IANA is requested to create an entry in the “urn:emergency:service” registry with the name “test” and with the purpose noted as “routing test calls within the ESInet toward a primary PSAP”. The reference will be to the registry created by this section, “urn:emergency:service:test”. The separator between the “test” label and the service (“urn:emergency:service:test” registry entry) is a period “.”. The “urn:emergency:service:test” registry contains label values corresponding to the levels in the “urn:emergency:service:sos” registry. These registries are normally kept in sync, an entry added to “urn:emergency:service:sos” should also add a corresponding entry to urn:emergency:service:test.</t>
+            <t>Test calls from outside an ESInet are directed to "urn:service:test.sos". To route such test calls where the routing infrastructure uses multiple levels of routing, and thus uses URNs in the "urn:emergency:service:sos" registry, service URNs are needed for test calls with corresponding levels. IANA is requested to create an entry in the "urn:emergency:service" registry with the name "test" and with the purpose noted as "routing test calls within an ESInet toward a primary PSAP". The reference will be to the registry created by this section, "urn:emergency:service:test". The separator between the "test" label and the service ("urn:emergency:service:test" registry entry) is a period ".". The "urn:emergency:service:test" registry contains label values corresponding to the levels in the "urn:emergency:service:sos" registry. These registries are normally kept in sync, an entry added to "urn:emergency:service:sos" should also add a corresponding entry to "urn:emergency:service:test" at a corresponding level.</t>
             <section>
               <name>Name</name>
               <t>urn:emergency:service:test</t>
@@ -335,8 +350,8 @@ please see http://xml.resource.org/authoring/README.html. -->
           <section>
             <name>"urn:emergency:service:responder" Registry</name>
             <t>IANA is requested to create the "urn:emergency:service:responder" subregistry under "urn:emergency:service"</t>
-            <t>Once a PSAP gets a call, they may have to transfer the call to a secondary PSAP. The secondary PSAP is chosen based on the type of responder, and the location of the caller. Routing of emergency calls from a PSAP towards a responder is accomplished with a URN beginning with “urn:emergency:service:responder”. IANA is requested to create an entry in the “urn:emergency:service” registry with the name “responder” and with the purpose noted as “routing emergency calls within the ESInet towards a responder”. The reference will be to the registry created by this section, “urn:emergency:service:responder”.</t>
-            <t>The “urn:emergency:service:responder” registry contains label values appropriate for the types of responders within the ESInet. The separator between the “responder” label and the type of responder (“urn:emergency:service:responder” registry value) is a period “.”. This registry is also used in other contexts where an agency type is useful. For those purposes, a 'psap' entry is provided. “urn:emergency:service:responder.psap” must not be used to route emergency calls. It is not equivalent to, or a substitute for “urn:service:sos” or "urn:emergency:service:sos".</t>
+            <t>Once a PSAP gets a call, they may have to transfer the call to a secondary PSAP. The secondary PSAP is chosen based on the type of responder, and the location of the caller. Routing of emergency calls from a PSAP towards a responder is accomplished with a URN beginning with "urn:emergency:service:responder". IANA is requested to create an entry in the "urn:emergency:service" registry with the name "responder" and with the purpose noted as "routing emergency calls within an ESInet towards a responder". The reference will be to the registry created by this section, "urn:emergency:service:responder".</t>
+            <t>The "urn:emergency:service:responder" registry contains label values appropriate for the types of responders within an ESInet. The separator between the "responder" label and the type of responder ("urn:emergency:service:responder" registry value) is a period ".". This registry is also used in other contexts where an agency type is useful. For those purposes, a 'psap' entry is provided. "urn:emergency:service:responder.psap" must not be used to route emergency calls. It is not equivalent to, or a substitute for "urn:service:sos" or "urn:emergency:service:sos".</t>
             <t>Some of the entries in this registry will require further subdivision.  Subregistries for such divisions are REQUIRED.</t>
             <section>
               <name>Name</name>
@@ -357,7 +372,7 @@ please see http://xml.resource.org/authoring/README.html. -->
               <t>This registry contains:</t>
               <ul>
                 <li>The ASCII "Name" of the responder (a short string)</li>
-                <li>The ASCII "Purpose" of the responder (explanatory text)</li>
+                <li>The UTF-8 "Description" of the responder (explanatory text)</li>
                 <li>A "Reference" (URI) to a document that defines the label</li>
               </ul>
             </section>
@@ -365,7 +380,7 @@ please see http://xml.resource.org/authoring/README.html. -->
 
           <section>
             <name>"urn:emergency:service:responder.police" Subregistry</name>
-            <t>There are many different kinds of law enforcement agencies that have distinct differences in jurisdiction and formation (for example,  police department organized under a municipal government as opposed to the sheriff's office organized under an elected sheriff). This subregistry delineates different types of police agenices under the urn:emergency:service:responder:police registry.  The separator between urn:emergency:responder.police and the entry in this subregistry is a period (".").</t>
+            <t>There are many different kinds of law enforcement agencies that have distinct differences in jurisdiction and formation (for example,  police department organized under a municipal government as opposed to the sheriff's office organized under an elected sheriff). This subregistry delineates different types of police agencies under the urn:emergency:service:responder:police registry.  The separator between urn:emergency:responder.police and the entry in this subregistry is a period (".").</t>
             <section>
               <name>Name</name>
               <t>urn:emergency:service:responder.police</t>
@@ -384,8 +399,8 @@ please see http://xml.resource.org/authoring/README.html. -->
               <name>Content</name>
               <t>This registry contains:</t>
               <ul>
-                <li>The UTF-8 "Name" of the agency type</li>
-                <li>The ASCII "Description" of the agency type</li>
+                <li>The ASCII "Name" of the agency type</li>
+                <li>The UTF-8 "Description" of the agency type</li>
                 <li>A "Reference" with a URI either to the document that defines the entry.</li>
               </ul>
               <t>Note that the Name is defined as UTF-8, to permit names that have no English equivalent</t>
@@ -394,7 +409,7 @@ please see http://xml.resource.org/authoring/README.html. -->
 
           <section>
             <name>"police.federal" Subregistry</name>
-            <t>There are several federal police agencies. This registry is a subregistry of “urn:emergency:service:responder.police.” and lists each police agency operating at the federal/national level. The “federal.police” registry contains label values appropriate for the types of national police responders within the ESInet. This is distinct from the parent subregistry, "police.federal", which includes the names for specific federal agencies. This is as opposed to the "responder.police" subregistry which indicated the agency TYPE (police). The separator between the “police.federal” label and the type of responder (“urn:emergency:service:responder.police.federal” registry value) is a period “.”.</t>
+            <t>There are several federal police agencies. This registry is a subregistry of "urn:emergency:service:responder.police." and lists each police agency operating at a federal/national level. The "police.federal" registry contains label values appropriate for the types of national police responders within an ESInet. This is distinct from the parent subregistry, "police.federal", which includes the names for specific federal agencies. This is as opposed to the "responder.police" subregistry which indicated the agency type (police). The separator between the "police.federal" label and the type of responder ("urn:emergency:service:responder.police.federal" registry value) is a period ".".</t>
             <section>
               <name>Name</name>
               <t>urn:emergency:service:responder.police.federal</t>
@@ -405,13 +420,13 @@ please see http://xml.resource.org/authoring/README.html. -->
             </section>
             <section>
               <name>Registration policy</name>
-              <t>Expert Review. No standards document required.  The expert should confirm that each entry represents a kind of federal police department, considered broadly.  As this is a specific agency, entries for different countries may be different.</t>
+              <t>Expert Review. No standards document required. The expert should confirm that each entry represents a kind of federal police department, considered broadly. As this is a specific agency, entries for different countries may be different.</t>
             </section>
             <section>
               <name>Content</name>
               <t>This registry contains:</t>
               <ul>
-                <li>The UTF-8 short "Name" of the agency, usually an abbreviation (e.g., "FBI")</li>
+                <li>The ASCII short "Name" of the agency, usually an abbreviation (e.g., "FBI")</li>
                 <li>The UTF-8 "Full Name" of the agency (e.g., "Federal Bureau of Investigation")</li>
                 <li>A "Reference" with a URI either to the document requested the registry entry or contact contact information for the individual who contributed the value.</li>
               </ul>
@@ -440,8 +455,8 @@ please see http://xml.resource.org/authoring/README.html. -->
               <name>Content</name>
               <t>This registry contains:</t>
               <ul>
-                <li>The UTF-8 "Name" of the agency type</li>
-                <li>The ASCII "Description" of the agency type</li>
+                <li>The ASCII "Name" of the agency type</li>
+                <li>The UTF-8 "Description" of the agency type</li>
                 <li>A "Reference" with a URI to the document that specifies the entry.</li>
               </ul>
               <t>Note that the Name is defined as UTF-8, to permit names that have no English equivalent</t>
@@ -469,8 +484,8 @@ please see http://xml.resource.org/authoring/README.html. -->
               <name>Content</name>
               <t>This registry contains:</t>
               <ul>
-                <li>The UTF-8 "Name" of the agency type</li>
-                <li>The ASCII "Description" of the agency type</li>
+                <li>The ASCII "Name" of the agency type</li>
+                <li>The UTF-8 "Description" of the agency type</li>
                 <li>A "Reference" with a URI to the document that specifies the entry.</li>
               </ul>
               <t>Note that the Name is defined as UTF-8, to permit names that have no English equivalent</t>
@@ -479,7 +494,7 @@ please see http://xml.resource.org/authoring/README.html. -->
           <section>
             <name>"urn:emergency:service:serviceAgencyLocator" Subregistry</name>
             <t>
-              Agencies connected to an ESInet need to connect to various services and public safety agencies. A service called the Service/Agency Locator provides a directory ("white pages") of agencies, together with key information about the service or agency. The Service/Agency Locator is a distributed database. There are several mechanisms by which the Service/Agency Locator can be searched to locate a specific service or agency. When searching for a service by location, the LoST protocol (<xref target="RFC5222"/> is used, which accepts a URN that specifies the service being searched by location. This registry provides URNS to be used in a LoST query to find a specific service at a particular location.
+              Agencies connected to an ESInet need to communicate with various services and public safety agencies. A service called the Service/Agency Locator provides a directory ("white pages") of agencies, together with key information about the service or agency. The Service/Agency Locator is a distributed database. There are several mechanisms by which the Service/Agency Locator can be searched to locate a specific service or agency. When searching for a service by location, the LoST protocol (<xref target="RFC5222"/> is used, which accepts a URN that specifies the service being searched by location. This registry provides URNS to be used in a LoST query to find a specific service at a particular location.
             </t>
             <section>
               <name>Name</name>
@@ -501,8 +516,8 @@ please see http://xml.resource.org/authoring/README.html. -->
                 This subregistry contains:
               </t>
               <ul>
-                <li>The "Service Identifier" of the service (e.g."ESRP")</li>
-                <li>The long "Service" name of the service (e.g., "Emergency Services Routing Proxy")</li>
+                <li>The ASCII "Service Identifier" of the service (e.g."ESRP")</li>
+                <li>The UTF-8 long "Service" name of the service (e.g., "Emergency Services Routing Proxy")</li>
                 <li>A "Reference" with a URI to the document that requested the service.</li>
               </ul>
             </section>
@@ -529,7 +544,7 @@ please see http://xml.resource.org/authoring/README.html. -->
               <name>Content</name>
               <t>this registry contains:</t>
               <ul>
-                <li>The UTF-8 "Name" of the identifier prefix</li>
+                <li>The ASCII "Name" of the identifier prefix</li>
                 <li>The UTF-8 "Purpose" of the identifier prefix</li>
                 <li>A "Reference" with a URI to the document that requested the registry entry.</li>
               </ul>
@@ -561,7 +576,7 @@ please see http://xml.resource.org/authoring/README.html. -->
               <t>This registry contains:</t>
               <ul>
                 <li>A short ASCII "Tag" </li>
-                <li>A long ASCII "Purpose" </li>
+                <li>A long UTF-8 "Purpose" </li>
                 <li>A "Reference" with a URI to the document that requested the registry entry.</li>
               </ul>
             </section>
@@ -579,7 +594,7 @@ please see http://xml.resource.org/authoring/README.html. -->
         <section>
           <name>"serviceNames" Registry</name>
           <t>
-            A variety of services are used during the processing of emergency calls. These services are deployed within an ESInet and are discoverable using the LoST [RFC5222] protocol or a discovery service known as the Service/Agency Locator (SAL). Standardized query terms are needed for both discovery mechanisms to work. When querying LoST, the service URNs in section 4.4.5.1. "urn:emergency:service" Subregistry are used. When querying the SAL, service names from the registry defined in this section are used. IANA is requested to create the ServiceNames subregistry in
+            A variety of services are used during the processing of emergency calls. These services are deployed within an ESInet and are discoverable using the LoST <xref target="RFC5222"/> protocol or a discovery service known as the Service/Agency Locator (SAL). Standardized query terms are needed for both discovery mechanisms to work. When querying LoST, the service URNs in section 4.4.5.1. "urn:emergency:service" Subregistry are used. When querying the SAL, service names from the registry defined in this section are used. IANA is requested to create the ServiceNames subregistry in
             the Emergency Registry.
           </t>
           <section>
@@ -601,7 +616,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>An ASCII short "Service Name" of the service (e.g., "ADR")</li>
-              <li>An ASCII long "Service" name of the service (e.g., "Additional Data Repository")</li>
+              <li>A UTF-8 long "Service" name of the service (e.g., "Additional Data Repository")</li>
               <li>A "Reference", a URI to the document that defines the service.</li>
             </ul>
           </section>
@@ -628,8 +643,8 @@ please see http://xml.resource.org/authoring/README.html. -->
             <name>Content</name>
             <t>This registry contains:</t>
             <ul>
-              <li>The short "Name" of the service state (e.g., "Normal" or "ScheduledMaintenanceDown")</li>
-              <li>The long "Description" of the service state (e.g., "The service is operating normally. Calls can be sent to this destination normally.")</li>
+              <li>The short ASCII "Name" of the service state (e.g., "Normal" or "ScheduledMaintenanceDown")</li>
+              <li>The long UTF-8 "Description" of the service state (e.g., "The service is operating normally. Calls can be sent to this destination normally.")</li>
               <li>A "Reference" with a URI to the document that defines the state.</li>
             </ul>
           </section>
@@ -656,8 +671,8 @@ please see http://xml.resource.org/authoring/README.html. -->
             <name>Content</name>
             <t>This registry contains:</t>
             <ul>
-              <li>The short "Name" of the element state (e.g., "Normal" or "ScheduledMaintenanceDown")</li>
-              <li>The long "Description" of the element state (e.g., "The service is operating normally. Calls can be sent to this element normally.")</li>
+              <li>The short ASCII "Name" of the element state (e.g., "Normal" or "ScheduledMaintenanceDown")</li>
+              <li>The long UTF-8 "Description" of the element state (e.g., "The service is operating normally. Calls can be sent to this element normally.")</li>
               <li>A "Reference" with a URI to the document that defines the state.</li>
             </ul>
           </section>
@@ -665,7 +680,7 @@ please see http://xml.resource.org/authoring/README.html. -->
         <section>
           <name>"SIPHeaderIsOperatorConditions" Registry</name>
           <t>
-            Some emergency standards use a policy based routing mechanism where a policy rule has a series of testable conditions.  One such condition is "SIPHeaderCondition" which tests a SIP header field in the INVITE or MESSAGE of a call (such as “From”, “To”, “Contact”, etc.). SIPHeaderCondition has an "operator" member has three potential values:
+            Some emergency standards use a policy based routing mechanism where a policy rule has a series of testable conditions.  One such condition is "SIPHeaderCondition" which tests a SIP header field in the INVITE or MESSAGE of a call (such as "From", "To", "Contact", etc.). SIPHeaderCondition has an "operator" member has three potential values:
           </t>
           <ul>
             <li>"EQ" for an equality match</li>
@@ -691,7 +706,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <name>Content</name>
             <t>This registry contains:</t>
             <ul>
-              <li>A short UTF-8 "Name" </li>
+              <li>A short ASCII "Name" </li>
               <li>The long UTF-8 "Description" </li>
               <li>A "Reference" with a URI to the document that requested the registry entry.</li>
             </ul>
@@ -719,14 +734,14 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>A short ASCII "Name" </li>
-              <li>The long ASCII "Description" </li>
+              <li>A long UTF-8 "Description" </li>
               <li>A "Reference" with a URI to the document that requested the registry entry.</li>
             </ul>
           </section>
         </section>
 
         <section>
-          <name>"securityPosture" Registry</name>
+          <name>"Security Posture" Registry</name>
           <t>Emergency Services agencies may be attacked in an effort to disrupt their services.  Some emergency services standards allow for various elements, services and other entities to communicate their current security status, ranging on a color scale from Green to Red. This allows downstram and upstream entities to evaluate the current security conditions of a given entity, such as other parts of the system or a Security Operations Center.</t>
           <section>
             <name>Name</name>
@@ -747,7 +762,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>A short ASCII "Value" </li>
-              <li>The long ASCII "Purpose" </li>
+              <li>A long UTF-8 "Purpose" </li>
               <li>A "Reference" with a URI to the document that requested the registry entry.</li>
             </ul>
           </section>
@@ -775,7 +790,8 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>A short ASCII "Name" </li>
-              <li>The long ASCII "Description" </li>
+              <li>A long UTF-8 "Purpose" </li>
+				<li>The short UTF-8 "Category" </li>
               <li>A "Reference" with a URI to the document that requested the registry entry.</li>
             </ul>
           </section>
@@ -804,7 +820,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <ul>
               <li>The ASCII "Value" (a short string)</li>
               <li>The "Code" value (a 3-digit integer)</li>
-              <li>The ASCII "Text" description (explanatory text, a string)</li>
+              <li>The UTF-8 "Text" description (explanatory text, a string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
@@ -834,7 +850,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Name" (a short string)</li>
-              <li>The ASCII "Purpose" (explanatory text, a string)</li>
+              <li>The UTF-8 "Purpose" (explanatory text, a string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
@@ -889,7 +905,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Name" (e.g., "emergency") (a short string)</li>
-              <li>The ASCII "Description" (e.g., "Call is deemed urgent call and treated as such") (explanatory text, a string)</li>
+              <li>The UTF-8 "Description" (e.g., "Call is deemed urgent call and treated as such") (explanatory text, a string)</li>
               <li>The ASCII "Classification" (e.g., "Primary") (a string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
@@ -918,7 +934,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Name" (a short string)</li>
-              <li>The ASCII "Purpose" (explanatory text, a string)</li>
+              <li>The UTF-8 "Purpose" (explanatory text, a string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
@@ -946,7 +962,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Name" (a short string)</li>
-              <li>The ASCII "Purpose" (explanatory text, a string)</li>
+              <li>The UTF-8 "Purpose" (explanatory text, a string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
@@ -976,7 +992,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Name" (a short string)</li>
-              <li>The ASCII "Description" (explanatory text, a string)</li>
+              <li>The UTF-8 "Description" (explanatory text, a string)</li>
             </ul>
           </section>
         </section>
@@ -1003,7 +1019,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Role" (a short string)</li>
-              <li>The ASCII "Description" (explanatory text, a string)</li>
+              <li>The UTF-8 "Description" (explanatory text, a string)</li>
               <li>A "Reference" (URI) with either contact information for the entity that or a URI to the document that requests the entry.</li>
             </ul>
           </section>
@@ -1061,7 +1077,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The "Status Code" (a 3 digit integer)</li>
-              <li>The ASCII "Description" (explanatory text, a string)</li>
+              <li>The UTF-8 "Description" (explanatory text, a string)</li>
               <li>A "Reference" (URI) to the document that requests the entry.</li>
             </ul>
           </section>
@@ -1118,30 +1134,36 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The UTF-8 "Token" (a short string) (e.g., "Road Centerline" or "Hybrid").</li>
-              <li>The ASCII "Description" (explanatory text, a string)</li>
+              <li>The UTF-8 "Description" (explanatory text, a string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
         </section>
 
         <section>
-          <name>"GIS Layers" Registry</name>
+          <name>"GIS Data Layers" Registry</name>
           <t>
-            A Geospatial Information System (GIS) contains features (points, lines, polygons, etc.) each with a set of attributes, organized in "layers".  Layers (such as discipline-specific service regions, road centerlines, address points, etc. are common in GIS systems used by emergency services.  This registry enumerates the names of layers that are used for emergency services alongf with a shorter version that may be used in databases or interfaces.
-          </t>
+			  A Geographic Information System (GIS) contains features (points, lines, polygons, etc.), each with a set of attributes that are organized in "layers." Layers (e.g., discipline-specific service regions, road centerlines, address points) are common in GIS and mapping systems used by emergency services. This registry enumerates the names of layers that are used for emergency services along with a shorter (abbreviated) version that may be used in databases or interfaces.
+		  </t>
           <section>
             <name>Name</name>
-            <t>GIS Layers</t>
+            <t>GIS Data Layers</t>
           </section>
           <section>
             <name>Information Needed to Create a New Value</name>
-            <t>Full name of the layer and a short version of the name</t>
+			  <t>The full name of the GIS layer, a short (abbreviated) version of the name (the indicator), and a reference to the document that specifies it.</t> 
           </section>
           <section>
             <name>Registration policy</name>
             <t>
-              Specification Required <xref target="RFC8126"/>, which requires expert review.  The expert should confirm that each entry represents a new GIS layer.
-            </t>
+              Specification Required <xref target="RFC8126"/>, which requires expert review. The specification MUST be from the IETF or a recognized standards organization that creates standards for emergency services. The expert must confirm that each entry represents a new GIS layer. The expert must confirm the following:</t>
+			<ul>
+				<li>The requested entry is a new GIS layer that is appropriate for emergency services and it is not a responder layer (e.g., Police, Fire, EMS, Coast Guard).</li>
+				<li>If the registering organization is not the IETF, it is an appropriate organization to define the new GIS layer.</li>
+				<li>The Name and Layer Indicator values follow conventions established by the initial values: (1) The Name value includes the feature type “Point”, “CenterLine”, “Line”, “Polygon”, or “Table” appropriate for the new GIS layer at the end of the Name, and (2) The Layer Indicator value includes the appropriate feature type abbreviation “P”, “CL”, “L”, Poly”, or “Tbl” for the new GIS layer at the end of the Layer Indicator when needed to distinguish between different possible representations of the same phenomena.</li>
+				<li>The Name and Layer Indicator values are unique in this registry and do not duplicate the GIS Layer and Layer Indicator values in the urn:emergency:service:responder registry or any subregistries thereof.</li>
+				<li>The reference leads to a document that clearly describes the GIS layer and the type of features the GIS layer contains.</li>
+			</ul>
           </section>
           <section>
             <name>Content</name>
@@ -1206,7 +1228,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Token" of the DR (a short string) (e.g., "LocationReferenceNotResolved")</li>
-              <li>The ASCII "Member" of the type of DR (e.g., "Problem" or "Query"). More than one is allowed</li>
+              <li>The ASCII "Name" of the type of DR (e.g., "Problem" or "Query"). More than one is allowed.</li>
               <li>The ACII "Discrepancy Reports" of included discrepancy report(s) included (e.g., "LoSTDiscrepancyResponse, BCFDiscrepancyReport).  More than one is allowed.</li>
               <li>A "Reference" (URI) to document(s) that request the entry</li>
             </ul>
@@ -1242,6 +1264,36 @@ please see http://xml.resource.org/authoring/README.html. -->
           </section>
         </section>
 
+		  <section>
+			  <name>"Agent States" Registry</name>
+			  <t>
+				  An Agent entity in NG9-1-1 may have one of multiple states. This This registry enumerates those states.
+			  </t>
+			  <section>
+				  <name>Name</name>
+				  <t>Agent States</t>
+			  </section>
+			  <section>
+				  <name>Information Needed to Create a New Value</name>
+				  <t>State and Description of the Agent State.</t>
+			  </section>
+			  <section>
+				  <name>Registration policy</name>
+				  <t>
+					  Specification Required <xref target="RFC8126"/>, which requires expert review.
+				  </t>
+			  </section>
+			  <section>
+				  <name>Content</name>
+				  <t>This registry contains:</t>
+				  <ul>
+					  <li>The ASCII "State" (a short string)</li>
+					  <li>The UTF-8 "Description" (a short string)</li>
+					  <li>A "Reference" (URI) to the document that requests the entry</li>
+				  </ul>
+			  </section>
+		  </section>
+
         <section>
           <name>"LoggingServiceMediaErrorReasonCodes" Registry</name>
           <t>
@@ -1266,7 +1318,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Name" (a short string)</li>
-              <li>The ASCII "Description" (explanatory text, a string)</li>
+              <li>The UTF-8 "Description" (explanatory text, a string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
@@ -1302,6 +1354,36 @@ please see http://xml.resource.org/authoring/README.html. -->
       </section>
       <!-- Internal Registries -->
       <section>
+        <name>Emergency Call-Info Purpose Registry</name>
+        <t>
+          Emergency calls use a number of Call-Info headers to provide information about the call to entities along the call path.  The purpose parameter for all of these consists of the string "emergency", <xref target="PurposePrefix"/> followed by a hypen and a member of this registry.
+        </t>
+        <section>
+          <name>Name</name>
+          <t>Emergency Call-Info Purpose</t>
+        </section>
+        <section>
+          <name>Information Needed to Create a New Value</name>
+          <t>Name of the purpose</t>
+        </section>
+        <section>
+          <name>Registration policy</name>
+          <t>
+            Specification Required <xref target="RFC8126"/>, which requires expert review.  The expert should confirm that the Call-Info purpose parameter use is well documented and unique.
+          </t>
+        </section>
+        <section>
+          <name>Content</name>
+          <t>This registry contains:</t>
+          <ul>
+            <li>An ASCII "Name" (a short string)</li>
+            <li>A UTF-8 Description (a short string)</li>
+            <li>A "Reference" (URI) to the document that requests the entry</li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
         <name>EIDO Registries</name>
         <t>
           Following are registries needed to implement the Emergency Incident Data Object, the standard way to represent incident state when passed between entities in an ESInet or other emergency services networks, <xref target="EIDO" />.
@@ -1327,7 +1409,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <name>Content</name>
             <t>This registry contains:</t>
             <ul>
-              <li>The UTF-8 "Value" (a short string)</li>
+              <li>The ASCII "Value" (a short string)</li>
               <li>The UTF-8 "Literal Description" (a short string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
@@ -1357,7 +1439,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Value" (a short string)</li>
-              <li>The ASCII "Literal Description" (a short string)</li>
+              <li>The UTF-8 "Literal Description" (a short string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
@@ -1384,7 +1466,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Value" (a short string)</li>
-              <li>The ASCII "Literal Description" (a short string)</li>
+              <li>The UTF-8 "Literal Description" (a short string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
@@ -1412,7 +1494,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <name>Content</name>
             <t>This registry contains:</t>
             <ul>
-              <li>The UTF-8 "Value" (a short string)</li>
+              <li>The ASCII "Value" (a short string)</li>
               <li>The UTF-8 "Literal Description" (a short string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
@@ -1443,7 +1525,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The 2 or 3 digit integer code</li>
-              <li>The ASCII "Literal Description" (a short string)</li>
+              <li>The UTF-8 "Literal Description" (a short string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
@@ -1472,7 +1554,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Value" (a short string)</li>
-              <li>The ASCII "Literal Description" (a short string)</li>
+              <li>The UTF-8 "Literal Description" (a short string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
@@ -1480,7 +1562,7 @@ please see http://xml.resource.org/authoring/README.html. -->
         <section>
           <name>"EIDO-VehicleRelationshipType" Registry</name>
           <t>
-            A VehicleRelationshipType describes the relationship (victim’s vehicle, accident vehicle, suspect vehicle, etc.) of a vehicle to the incident. This registry enumerate the allowable relationship types allowed.
+            A VehicleRelationshipType describes the relationship (victim's vehicle, accident vehicle, suspect vehicle, etc.) of a vehicle to the incident. This registry enumerate the allowable relationship types allowed.
           </t>
           <section>
             <name>Name</name>
@@ -1501,7 +1583,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Value" (a short string)</li>
-              <li>The ASCII "Literal Description" (a short string)</li>
+              <li>The UTF-8 "Literal Description" (a short string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
@@ -1528,7 +1610,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Value" (a short string)</li>
-              <li>The ASCII "Literal Description" (a short string)</li>
+              <li>The UTF-8 "Literal Description" (a short string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
@@ -1557,7 +1639,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Value" (a short string)</li>
-              <li>The ASCII "Literal Description" (a short string)</li>
+              <li>The UTF-8 "Literal Description" (a short string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
@@ -1584,7 +1666,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <t>This registry contains:</t>
             <ul>
               <li>The ASCII "Value" (a short string)</li>
-              <li>The ASCII "Literal Description" (a short string)</li>
+              <li>The UTF-8 "Literal Description" (a short string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
           </section>
@@ -1608,7 +1690,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <name>Content</name>
             <t>This registry contains:</t>
             <ul>
-              <li>The UTF-8 "Value" (a short string)</li>
+              <li>The ASCII "Value" (a short string)</li>
               <li>The UTF-8 "Literal Description" (a short string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
@@ -1635,7 +1717,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <name>Content</name>
             <t>This registry contains:</t>
             <ul>
-              <li>The UTF-8 "Value" (a short string)</li>
+              <li>The ASCII "Value" (a short string)</li>
               <li>The UTF-8 "Literal Description" (a short string)</li>
               <li>A "Reference" (URI) to the document that requests the entry</li>
             </ul>
@@ -1692,7 +1774,7 @@ please see http://xml.resource.org/authoring/README.html. -->
       <name>References</name>
       <references>
         <name>Normative References</name>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
         <reference anchor="EIDO" target ="https://dev.nena.org/higherlogic/ws/public/download/23026/NENA-STA-021.1%20EIDO%20JSON%20PubRvw.pdf">
           <front>
             <title>NENA Standard for Emergency Incident Data Object (Public Review Draft)</title>
@@ -1736,22 +1818,16 @@ please see http://xml.resource.org/authoring/README.html. -->
       </references>
       <references>
         <name>Informative References</name>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.3261.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.3550.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.3840.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.4240.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.4730.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.5031.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.5222.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.5226.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.5727.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.6061.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.6443.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.6665.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.7231.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.8126.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.8141.xml"?>
-        <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.8216.xml"?>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.3261.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.3550.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.3840.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.5031.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.5222.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.5727.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6061.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6443.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8126.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8216.xml"/>
         <reference anchor="NG112" target ="https://eena.org/eena-ng112-project/">
           <front>
             <title>
@@ -1774,36 +1850,7 @@ please see http://xml.resource.org/authoring/README.html. -->
             <date month="June" year="2022"/>
           </front>
         </reference>
-        <reference anchor="StatusCodes" target ="https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml">
-          <front>
-            <title>Hypertext Transfer Protocol (HTTP) Status Code Registry</title>
-            <author>
-              <organization abbrev="IANA">Internet Assigned Numbers Authority</organization>
-            </author>
-            <date month="September" year="2018"/>
-          </front>
-        </reference>
-        <reference anchor="i3v2" target ="https://cdn.ymaws.com/www.nena.org/resource/resmgr/standards-archived/nena-sta-010.2_i3_architectu.pdf">
-          <front>
-            <title>
-              NENA Detailed Functional and Interface Standards for the NENA i3 Solution ("i3 Version 2").
-            </title>
-            <author>
-              <organization abbrev="NENA">NENA: the 9-1-1 Association</organization>
-            </author>
-            <date month="August" year="2016"/>
-          </front>
-        </reference>
-        <reference anchor="GIS" target ="https://www.nena.org/page/NG911GISDataModel">
-          <front>
-            <title>NENA Standard for Next-Generation 9-1-1 GIS Data Model</title>
-            <author>
-              <organization abbrev="NENA">NENA: the 9-1-1 Association</organization>
-            </author>
-            <date month="February" year="2020"/>
-          </front>
-        </reference>
-        <reference anchor="NRS" target ="https://www.nena.org/page/nena_registry_system">
+         <reference anchor="NRS" target ="https://www.nena.org/page/nena_registry_system">
           <front>
             <title>
               NENA Registry System
