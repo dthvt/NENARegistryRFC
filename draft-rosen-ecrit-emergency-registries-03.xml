@@ -1822,13 +1822,13 @@
           the standard way to represent incident state when passed between entities in an
           ESInet or other emergency services networks, <xref target="EIDO" />. </t>
         <section>
-          <name>"EIDO-AgencyRole" Registry</name>
+          <name>"EIDO Agency Role" Registry</name>
           <t>The role of the agency in relation to the Incident (e.g., "CallReceiving",
             "Dispatching", "Dispatched"). This may differ from agency role as defined in
             the Agency Role registry.</t>
           <section>
             <name>Name</name>
-            <t>EIDO-AgencyRole</t>
+            <t>EIDO Agency Role</t>
           </section>
           <section>
             <name>Information Needed to Create a New Value</name>
@@ -1852,7 +1852,7 @@
           </section>
         </section>
         <section>
-          <name>"EIDO-IncidentType-Common" Registry</name>
+          <name>"EIDO Incident Type Common" Registry</name>
           <t> When multiple agencies are involved in an incident, the type of incident
             must be communicated clearly. Many agencies have internal incident typing
             systems that are incompatible with each other. The Association of Public
@@ -1862,7 +1862,7 @@
             common type codes. </t>
           <section>
             <name>Name</name>
-            <t>EIDO-IncidentType-Common</t>
+            <t>EIDO Incident Type Common</t>
           </section>
           <section>
             <name>Information Needed to Create a New Value</name>
@@ -1889,14 +1889,14 @@
           </section>
         </section>
         <section>
-          <name>"EIDO-IncidentStatus-Common" Registry</name>
+          <name>"EIDO Incident Status Common" Registry</name>
           <t>When multiple agencies are involved in an incident, the status of incident
             must be communicated clearly. Many agencies have internal incident status
             reporting systems that are incompatible with each other. This registry
             enumerates status codes used in an EIDO.</t>
           <section>
             <name>Name</name>
-            <t>EIDO-IncidentStatus-Common</t>
+            <t>EIDO Incident Status Common</t>
           </section>
           <section>
             <name>Information Needed to Create a New Value</name>
@@ -1920,7 +1920,7 @@
           </section>
         </section>
         <section>
-          <name>"EIDO-ReportNumberType" Registry</name>
+          <name>"EIDO Report Number Type" Registry</name>
           <t>
             Used to indicate the current status of the report number associated with an
             incident. If a report number is present in an EIDO, it is required to
@@ -1929,7 +1929,7 @@
           </t>
           <section>
             <name>Name</name>
-            <t>EIDO-ReportNumberType</t>
+            <t>EIDO Report Number Type</t>
           </section>
           <section>
             <name>Information Needed to Create a New Value</name>
@@ -1953,7 +1953,7 @@
           </section>
         </section>
         <section>
-          <name>"EIDO-CommonDispositionCode" Registry</name>
+          <name>"EIDO Common Disposition Code" Registry</name>
           <t> An agency assigns a disposition to an incident when its participation in the
             incident ends. The disposition code indicates whether follow-up reports are
             required and conveys other information about the incident, such as whether
@@ -1967,7 +1967,7 @@
             standard.</t>
           <section>
             <name>Name</name>
-            <t>EIDO-CommonDispositionCode</t>
+            <t>EIDO Common Disposition Code</t>
           </section>
           <section>
             <name>Information Needed to Create a New Value</name>
@@ -1994,7 +1994,7 @@
           </section>
         </section>
         <section>
-          <name>"EIDO-PersonRole" Registry</name>
+          <name>"EIDO Person Role" Registry</name>
           <t>
             EIDOs may contain Person objects that describe a person someohow involved in
             an incident. The "role" of a person in an EIDO describes the relationship
@@ -2003,7 +2003,7 @@
           </t>
           <section>
             <name>Name</name>
-            <t>EIDO-PersonRole</t>
+            <t>EIDO Person Role</t>
           </section>
           <section>
             <name>Information Needed to Create a New Value</name>
@@ -2027,7 +2027,7 @@
           </section>
         </section>
         <section>
-          <name>"EIDO-VehicleRelationshipType" Registry</name>
+          <name>"EIDO Vehicle Relationship Type" Registry</name>
           <t>
             A VehicleRelationshipType describes the relationship (victim's vehicle,
             accident vehicle, suspect vehicle, etc.) of a vehicle to the incident. This
@@ -2035,7 +2035,7 @@
           </t>
           <section>
             <name>Name</name>
-            <t>EIDO-VehicleRelationshipType</t>
+            <t>EIDO Vehicle Relationship Type</t>
           </section>
           <section>
             <name>Information Needed to Create a New Value</name>
@@ -2059,14 +2059,14 @@
           </section>
         </section>
         <section>
-          <name>"EIDO-LocationType" Registry</name>
+          <name>"EIDO Location Type" Registry</name>
           <t>A LocationType conveys the location type (Caller, Initial, CurrentIncident,
             Staging, Investigation, Tower Location, etc.) of a location and its
             relationship to an ongoing incident. This registry enumerate the allowed
             LocationTypes.</t>
           <section>
             <name>Name</name>
-            <t>EIDO-LocationType</t>
+            <t>EIDO Location Type</t>
           </section>
           <section>
             <name>Information Needed to Create a New Value</name>
@@ -2090,7 +2090,7 @@
           </section>
         </section>
         <section>
-          <name>"EIDO-PrimaryUnitStatus-Common" Registry</name>
+          <name>"EIDO Primary Unit Status Common" Registry</name>
           <t> A PrimaryUnitStatus-Common is a standardized code for the current status of
             an emergency response units (e.g., whether a fire engine is "available" or
             "notAvailable"). This registry enumerates the allowed primary status codes.
@@ -2099,7 +2099,7 @@
             information. </t>
           <section>
             <name>Name</name>
-            <t>EIDO-PrimaryUnitStatus-Common</t>
+            <t>EIDO Primary Unit Status Common</t>
           </section>
           <section>
             <name>Information Needed to Create a New Value</name>
@@ -2123,7 +2123,7 @@
           </section>
         </section>
         <section anchor="secStatus">
-          <name>"EIDO-SecondaryUnitStatus-Common" Registry</name>
+          <name>"EIDO Secondary Unit Status Common" Registry</name>
           <t>Statuses that further qualifies the Primary Unit Status by providing more
             detail about the associated primary status. This registry enumerates the
             allowed secondary status values.</t>
@@ -2153,14 +2153,14 @@
           </section>
         </section>
         <section>
-          <name>"EIDO-EmergencyResourceType-Common" Registry</name>
+          <name>"EIDO Emergency Resource Type Common" Registry</name>
           <t>A standardized code for an emergency resource type (e.g., BombSquad,
             AirAmbulanceRotaryWing). Resource Types are teams and equipment as opposed
             to individuals with a skill set. This registry enumerates allowed resource
             types.</t>
           <section>
             <name>Name</name>
-            <t>EIDO-EmergencyResourceType-Common</t>
+            <t>EIDO Emergency Resource Type Common</t>
           </section>
           <section>
             <name>Information Needed to Create a New Value</name>
@@ -2184,7 +2184,7 @@
           </section>
         </section>
         <section>
-          <name>"EIDO-ResourceAttribute" Registry</name>
+          <name>"EIDO Resource Attribute" Registry</name>
           <t>
             A standard code for an emergency resource attribute (skill and equipment;
             e.g., "EMSPhysician, "EMT", "SCBA"). Also indicates an interpreter's
@@ -2193,7 +2193,7 @@
           </t>
           <section>
             <name>Name</name>
-            <t>EIDO-ResourceAttribute</t>
+            <t>EIDO Resource Attribute</t>
           </section>
           <section>
             <name>Information Needed to Create a New Value</name>
@@ -2470,11 +2470,11 @@
         <name>New Registries</name>
         <t>IANA is requested to establish the following registries in the Emergency group.</t>
         <section>
-          <name>"IDX_Strategies" Registry</name>
+          <name>"IDX Strategies" Registry</name>
           <t>IANA is requested to create this registry in the Emergency group.</t>
           <section>
             <name>Name</name>
-            <t>IDX_Strategies</t>
+            <t>IDX Strategies</t>
           </section>
           <section>
             <name>Information Needed to Create a New Value</name>
